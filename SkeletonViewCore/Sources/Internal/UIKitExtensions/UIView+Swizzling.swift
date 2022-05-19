@@ -29,26 +29,26 @@ extension UIView {
     }
     
     func swizzleLayoutSubviews() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            DispatchQueue.once(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
-                swizzle(selector: #selector(UIView.layoutSubviews),
-                        with: #selector(UIView.skeletonLayoutSubviews),
-                        inClass: UIView.self,
-                        usingClass: UIView.self)
-                self.layoutSkeletonIfNeeded()
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+//            DispatchQueue.once(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
+//                swizzle(selector: #selector(UIView.layoutSubviews),
+//                        with: #selector(UIView.skeletonLayoutSubviews),
+//                        inClass: UIView.self,
+//                        usingClass: UIView.self)
+//                self.layoutSkeletonIfNeeded()
+//            }
+//        }
     }
     
     func unSwizzleLayoutSubviews() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-            DispatchQueue.removeOnce(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
-                swizzle(selector: #selector(UIView.skeletonLayoutSubviews),
-                        with: #selector(UIView.layoutSubviews),
-                        inClass: UIView.self,
-                        usingClass: UIView.self)
-            }
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+//            DispatchQueue.removeOnce(token: "UIView.SkeletonView.swizzleLayoutSubviews") {
+//                swizzle(selector: #selector(UIView.skeletonLayoutSubviews),
+//                        with: #selector(UIView.layoutSubviews),
+//                        inClass: UIView.self,
+//                        usingClass: UIView.self)
+//            }
+//        }
     }
     
     func swizzleTraitCollectionDidChange() {
