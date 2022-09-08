@@ -51,7 +51,7 @@ public extension UIColor {
     }
     
     var darker: UIColor {
-        adjust(by: 0.94)
+        adjust(by: 0.92)
     }
     
 }
